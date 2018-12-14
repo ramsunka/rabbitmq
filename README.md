@@ -23,11 +23,11 @@ Networks are unreliable and applications may fail to process messages therefore 
 AMQP 0-9-1 is a protocol in the sense that AMQP entities and routing schemes are primarily defined by application developers not a broker. Accordingly, provision is made for protocol to declare exchanges,queues and binding between them, subscribing queue.
 
 The AMQP version is expressed using two or three digits – the major number, the minor number and an optional revision number. By convention, the version is expressed as major-minor[-revision] or major.minor[.revision]:
-•	The major, minor, and revision numbers can take any value from 0 to 99 for official specifications.
-•	Major, minor, and revision numbers of 100 and above are reserved for internal testing and development purposes.
-•	Version numbers indicate syntactic and semantic interoperability.
-•	Version 0-9-1 is represented as major = 0, minor = 9, revision = 1.
-•	Version 1.1 would be represented as major = 1, minor = 1, revision = 0. Writing “AMQP/1.1” is equivalent to writing “AMQP/1.1.0” or AMQP/1-1-0.
+ •	The major, minor, and revision numbers can take any value from 0 to 99 for official specifications.
+ •	Major, minor, and revision numbers of 100 and above are reserved for internal testing and development purposes.
+ •	Version numbers indicate syntactic and semantic interoperability.
+ •	Version 0-9-1 is represented as major = 0, minor = 9, revision = 1.
+ •	Version 1.1 would be represented as major = 1, minor = 1, revision = 0. Writing “AMQP/1.1” is equivalent to writing “AMQP/1.1.0” or AMQP/1-1-0.
 
 AMQP is message protocol that deals with publishers and consumers. The publisher produces the message and consumer picks them up and process it. The process of sending message from producer to consumer happens only when the exchanges and queues are setup properly with right binding/routing key.
 Queues, exchanges and bindings are collectively referred to as AMQP entities.
@@ -96,9 +96,10 @@ Message can be published to queue using any of the below delivery modes.
 •	Persistent: It will store in the messages on disk which is basically persistent store. The throughput will be less if all message are persistent.
 ![image](https://user-images.githubusercontent.com/21335378/49989354-d2804400-ff2e-11e8-8d75-a7d84b6ad0c4.png)
 
-Requeue : From the Rabbitmq broker system while consuming message there are two options available for Requeue 
-No -->Which mean it will fetch the message from the queue and it will delete the message from the queue which is more like sending acknowledgement to the queue saying message is successfully consumed.
-Yes -->It will not delete the message from the queue means we are rejecting the message to requeue again to consume properly.
+# Requeue :
+From the Rabbitmq broker system while consuming message there are two options available for Requeue 
+          No -->Which mean it will fetch the message from the queue and it will delete the message from the queue which is more like sending acknowledgement to the queue saying message is successfully consumed.
+          Yes -->It will not delete the message from the queue means we are rejecting the message to requeue again to consume properly.
 
 
 ![image](https://user-images.githubusercontent.com/21335378/49989377-e0ce6000-ff2e-11e8-8dd5-dc1d020ecfec.png)
